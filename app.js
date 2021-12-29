@@ -13,6 +13,16 @@ app.get("/", function (request, response) {
 	response.sendFile(__dirname + "/signup.html");
 })
 
+app.post("/", function (req, res) {
+	let firstName = req.body.firstName;
+	let lastName = req.body.lastName;
+	let email = req.body.email;
+	
+	console.log(firstName);
+	console.log(lastName);
+	console.log(email)
+})
+
 
 
 
