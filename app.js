@@ -1,11 +1,9 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-// const path = require("path");
 const app = express();
 const https = require("https");
 const request = require("request");
-// app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 
@@ -14,14 +12,50 @@ app.get("/", function (request, response) {
 })
 
 app.post("/", function (req, res) {
-	let firstName = req.body.firstName;
-	let lastName = req.body.lastName;
-	let email = req.body.email;
+	const firstName = req.body.firstName;
+	const lastName = req.body.lastName;
+	const email = req.body.email;
+	// mail chimp object
+	const data = {
+		members: [
+			{
+				email_address: email,
+				status: "subscribed",
+				merge_fields: {
+					FNAME: firstName,
+					LNAME: lastName
+				}
+				
+			}
+		]
+	};
+	const jsonData = JSON.stringify(data);
+	const url = 'https://us20.api.mailchimp.com/3.0/lists/6f0931e41c';
+	const options = {
+		method: "POST",
+		auth: "jackie:c9364a8e78f53ef3cfb8cac4d10d6721-us20"
+	}
 	
-	console.log(firstName);
-	console.log(lastName);
-	console.log(email)
+	const request = https.request(url, options, function (response) {
+		
+		if (response.statusCode === 200) {
+			res.sendFile(__dirname + "/success.html");
+		} else {
+			res.sendFile(__dirname + "/failure.html");
+		}
+		
+		response.on("data", function (data) {
+			console.log(JSON.parse(data))
+		})
+	})
+	
+	// request.write(jsonData);
+	request.end();
+	
 })
+
+
+
 
 
 
@@ -34,3 +68,4 @@ app.post("/", function (req, res) {
 app.listen(3000, function () {
 	console.log("Server is running..")
 })
+
