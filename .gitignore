@@ -7,8 +7,6 @@
 /dataSources/
 /dataSources.local.xml
 node_modules
-package.json
-package-lock.json
 newsletter-signup.iml
 config.js
 .env
