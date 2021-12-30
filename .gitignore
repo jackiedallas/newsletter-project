@@ -8,6 +8,5 @@
 /dataSources.local.xml
 node_modules
 newsletter-signup.iml
-config.js
 .env
 target
