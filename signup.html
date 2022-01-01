@@ -5,6 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Newsletter Signup</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Varela+Round&display=swap" rel="stylesheet">
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 	<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
@@ -14,18 +17,32 @@
 </head>
 <body class="">
 
-	<div class="container main-box">
-		<div class="sub-main-box">
-			<div class="container sub-box">
-				<div class="email-box">
-					<input type="email" placeholder="Email" name="email" class="form-control ch-box-size" required>
-				</div>
-				<div class="sub-btn-box">
-					<button class="btn btn-dark sub-btn" type="submit">Subscribe</button>
+	<form action="/" method="post">
+		<div class="container main-box">
+			<div class="email-pic">
+				<img src="image/fastemail.png" alt="email" width="300" height="275">
+				
+			</div>
+			<div class="text">
+				<p class="text-main">Jackie Dallas | Software Engineer</p>
+				<p>Subscribe to my newsletter to stay up to date on my latest work!</p>
+			</div>
+			
+			<div class="sub-main-box">
+				<div class="sub-box">
+					<div class="email-box">
+						<input type="email" placeholder="Email address" name="email" class="form-control ch-box-size" required>
+					</div>
+					<div class="sub-btn-box">
+						<button class="btn btn-dark sub-btn" type="submit">Subscribe</button>
+					</div>
 				</div>
 			</div>
+			<div class="copy-right">
+				<p class="text-muted">&copy; Jackie Dallas</p>
+			</div>
 		</div>
-	</div>
+	</form>
 
 <!--	<h1 class="display-1">Hello World</h1>-->
 <!--	<form action="/" method="post" class="form-signin">-->
@@ -35,7 +52,6 @@
 <!--		<input type="text"  class="form-control middle" placeholder="Last Name" name="lastName" required>-->
 <!--		<input type="email" class="form-control bottom" placeholder="Email" name="email" required>-->
 <!--		<button class="btn btn-lg btn-dark btn-block mt-3" type="submit">Sign Me Up!</button>-->
-<!--		<p class="mt-5 mb-3 text-muted">&copy; Jackie Dallas</p>-->
 <!--	</form>-->
 </body>
 </html>

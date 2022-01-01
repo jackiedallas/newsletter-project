@@ -13,8 +13,8 @@ app.get("/", function (request, response) {
 })
 
 app.post("/", function (req, res) {
-	const firstName = req.body.firstName;
-	const lastName = req.body.lastName;
+	// const firstName = req.body.firstName;
+	// const lastName = req.body.lastName;
 	const email = req.body.email;
 	// mail chimp object
 	const data = {
@@ -22,10 +22,10 @@ app.post("/", function (req, res) {
 			{
 				email_address: email,
 				status: "subscribed",
-				merge_fields: {
-					FNAME: firstName,
-					LNAME: lastName
-				}
+				// merge_fields: {
+				// 	FNAME: firstName,
+				// 	LNAME: lastName
+				// }
 				
 			}
 		]
