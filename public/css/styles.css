@@ -50,9 +50,27 @@ body {
 }
 @media screen and (min-width: 1024px) {
 	.main-box {
+		display: flex;
 		background-color: white;
 		width: 60rem;
 		height: 40rem;
 		border-radius: 30px;
+	}
+	.sub-main-box {
+		align-self: flex-end;
+		width: 80%;
+		height: 7rem;
+		border: 1px solid dimgrey;
+		border-radius: 10px;
+	}
+	.sub-box {
+		display: flex;
+		padding: 2rem;
+	}
+	.sub-btn-box {
+		margin-left: auto;
+	}
+	.ch-box-size {
+		/*width: 100%;*/
 	}
 }
